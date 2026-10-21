@@ -1,0 +1,67 @@
+{%- if page is defined -%}
+  {%- set meta_title = page.title ~ ": Oxidize" -%}
+  {%- set meta_description = page.description | default(value=config.description) -%}
+{%- else -%}
+  {%- set meta_title = config.title ~ ": Rust consulting" -%}
+  {%- set meta_description = config.description -%}
+{%- endif -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}{{ meta_title }}{% endblock title %}</title>
+  <meta name="description" content="{{ meta_description }}">
+  {% if current_url is defined %}
+  <link rel="canonical" href="{{ current_url }}">
+  {% endif %}
+  <link rel="icon" href="{{ get_url(path='oxidize-icon.svg') }}" type="image/svg+xml">
+  <link rel="preload" href="{{ get_url(path='fonts/bricolage-grotesque.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ get_url(path='fonts/atkinson-hyperlegible-400-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) }}">
+  <script>try { const t = localStorage.getItem('oxidize-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="{{ get_url(path='@/_index.md') }}" aria-label="Oxidize home">{{<logo/>}}Oxidize</a>
+    <nav class="nav" aria-label="Main">
+      <a class="opt" href="{{ get_url(path='@/_index.md') }}#work">Work</a>
+      <a class="opt" href="{{ get_url(path='@/_index.md') }}#talks">Talks</a>
+      <a href="{{ get_url(path='@/_index.md') }}#contact">Contact</a>
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch color theme">auto</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+{% block content %}{% endblock content %}
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="{{ get_url(path='@/_index.md') }}">{{<logo accent="#ff7a3d"/>}}Oxidize</a>
+      <p>Oxidize Limited, Gladstonos 16, 8046 Paphos, Cyprus. Company number HE 488734.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a>
+      <a href="{{ config.extra.linkedin }}">LinkedIn</a>
+    </div>
+    <div>
+      <h4>Work</h4>
+      <a href="{{ config.extra.tellus }}">tellus</a>
+      <a href="{{ config.extra.github }}">GitHub</a>
+      <a href="{{ config.extra.personal }}">heikoseeberger.de</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="{{ get_url(path='@/imprint.md') }}">Imprint</a>
+      <a href="{{ get_url(path='@/privacy.md') }}">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script src="{{ get_url(path='site.js', cachebust=true) }}" defer></script>
+</body>
+</html>
