@@ -1,5 +1,6 @@
 +++
 title = "Privacy"
+aliases = ["privacy.html"]
 +++
 
 ## Controller
