@@ -1,0 +1,18 @@
+base_url    = "https://oxidize.cy"
+title       = "Oxidize"
+description = "Rust consulting for actor systems, supervision and event sourcing, by Heiko Seeberger."
+
+compile_sass       = true
+minify_html        = true
+build_search_index = false
+
+[link_checker]
+internal_level = "error"
+external_level = "warn"
+
+[extra]
+email    = "info@oxidize.cy"
+tellus   = "https://tellus.rs"
+github   = "https://github.com/hseeberger"
+linkedin = "https://www.linkedin.com/in/heikoseeberger/"
+personal = "https://heikoseeberger.de"

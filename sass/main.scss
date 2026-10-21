@@ -1,0 +1,27 @@
+@use "../tellus-site/sass/fonts";
+@use "../tellus-site/sass/tokens";
+@use "../tellus-site/sass/base";
+@use "../tellus-site/sass/header";
+@use "../tellus-site/sass/hero";
+@use "../tellus-site/sass/sections";
+@use "../tellus-site/sass/footer";
+@use "../tellus-site/sass/docs";
+
+:root {
+  --accent: #a8430f;
+  --accent-soft: #f1d9cb;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent: #ff7a3d;
+    --accent-soft: #3d2213;
+  }
+}
+:root[data-theme="dark"] {
+  --accent: #ff7a3d;
+  --accent-soft: #3d2213;
+}
+
+.hero { padding-bottom: clamp(48px, 7vw, 88px); border-bottom: 1px solid var(--rule); }
+.hero .wrap { display: block; }
+.hero h1 { max-width: 14ch; }

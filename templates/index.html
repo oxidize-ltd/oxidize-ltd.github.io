@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Oxidize Ltd <span aria-hidden="true">·</span> Rust consulting <span aria-hidden="true">·</span> Paphos, Cyprus</div>
+      <h1>Actors and event sourcing <span class="ground">in Rust.</span></h1>
+      <p class="lede">I am Heiko Seeberger. I wrote <a href="{{ config.extra.tellus }}">tellus</a>, an actor framework for Rust, after fifteen years of Scala and Akka. Through Oxidize I help teams design and build distributed systems in Rust, including what happens when parts of them fail.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:{{ config.extra.email }}">Email me</a>
+        <a class="btn btn-ghost" href="{{ config.extra.tellus }}">See tellus</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stratum" id="services">
+    <div class="wrap">
+      <div class="depth">What I do</div>
+      <div class="prose">
+        <h2>Actor systems in Rust, from design to production.</h2>
+        <p>I review the design of actor-based and event-sourced systems. Who supervises whom, what a restart loses, how state is recovered and what happens to messages in flight are the questions I start with.</p>
+        <p>I write code with your team, in your codebase. That can be a new service, a framework choice or a migration of an existing system.</p>
+        <p>I also take on general backend and distributed-systems work in Rust.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stratum alt" id="work">
+    <div class="wrap">
+      <div class="depth">Work</div>
+      <h2>What I have built.</h2>
+      <ul class="doc-list">
+        <li><a href="{{ config.extra.tellus }}"><b>tellus</b><span>An actor framework for Rust on Tokio: typed actors, supervision trees, death watch, event-sourced persistence and clustered remoting.</span></a></li>
+        <li><a href="https://github.com/hseeberger/eventsourced"><b>eventsourced</b><span>Event-sourced entities in Rust, with event logs and snapshot stores for NATS and Postgres.</span></a></li>
+        <li><a href="https://github.com/midnightntwrk/midnight-indexer"><b>Midnight Indexer</b><span>I led its development at Shielded Technologies.</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="stratum" id="talks">
+    <div class="wrap">
+      <div class="depth">Talks</div>
+      <h2>Recorded talks.</h2>
+      <ul class="doc-list">
+        <li><a href="https://www.youtube.com/watch?v=z40rgjZqrs4"><b>EventSourced: async_fn_in_trait in anger</b><span>Rust Nation UK, 2024</span></a></li>
+        <li><a href="https://www.youtube.com/live/sB4eWQ0Tuvo?t=465"><b>Distributed tracing in Rust</b><span>Rust Munich, 2024</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="stratum alt" id="contact">
+    <div class="wrap">
+      <div class="depth">Contact</div>
+      <div class="prose">
+        <h2>Write to me.</h2>
+        <p>Email <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a>. My writing and more about me are on <a href="{{ config.extra.personal }}">heikoseeberger.de</a>.</p>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
